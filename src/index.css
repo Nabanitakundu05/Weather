@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    font-family: 'Inter', sans-serif;
+  }
+
+  * {
+    @apply box-border;
+  }
+
+  body {
+    @apply m-0 min-h-screen bg-slate-900 text-white antialiased;
+  }
+
+  #root {
+    @apply min-h-screen;
+  }
+}
+
+@layer components {
+  .glass-card {
+    @apply rounded-2xl border border-white/20 bg-white/10 backdrop-blur-md shadow-[0_12px_40px_rgba(0,0,0,0.25)];
+  }
+
+  .glass-button {
+    @apply rounded-xl border border-white/30 bg-white/15 px-4 py-3 font-semibold text-white transition hover:scale-[1.02] hover:bg-white/20 active:scale-[0.98];
+  }
+
+  .metric-pill {
+    @apply rounded-xl border border-white/20 bg-black/20 p-3;
+  }
+
+  .metric-pill span {
+    @apply text-xs uppercase tracking-wider text-slate-200/80;
+  }
+
+  .metric-pill strong {
+    @apply mt-1 block text-base text-white;
+  }
+}
+
+@layer utilities {
+  .weather-theme {
+    background-size: 200% 200%;
+    animation: gradientFlow 14s ease infinite;
+  }
+
+  .theme-clear-day {
+    background-image: linear-gradient(130deg, #0f4c81, #2684b9 42%, #f59e0b 92%);
+  }
+
+  .theme-clear-night {
+    background-image: linear-gradient(135deg, #0a1f44, #123568 45%, #2d4f8b 90%);
+  }
+
+  .theme-rain {
+    background-image: linear-gradient(135deg, #0a2f4a, #235784 48%, #2e8ccf 100%);
+  }
+
+  .theme-snow {
+    background-image: linear-gradient(135deg, #7da2bd, #b7cad8 52%, #dbe8f0 100%);
+  }
+
+  .theme-cloud-day {
+    background-image: linear-gradient(130deg, #37506a, #587a96 48%, #8bb5ce 100%);
+  }
+
+  .theme-cloud-night {
+    background-image: linear-gradient(135deg, #151f30, #1f334f 45%, #325678 100%);
+  }
+
+  .theme-storm {
+    background-image: linear-gradient(130deg, #111827, #243447 50%, #3b5668 100%);
+  }
+
+  .theme-default-day {
+    background-image: linear-gradient(130deg, #1d4e89, #3b82f6 45%, #38bdf8 100%);
+  }
+
+  .theme-default-night {
+    background-image: linear-gradient(130deg, #0f172a, #1e293b 48%, #334155 100%);
+  }
+}
+
+@keyframes gradientFlow {
+  0% {
+    background-position: 0% 50%;
+  }
+
+  50% {
+    background-position: 100% 50%;
+  }
+
+  100% {
+    background-position: 0% 50%;
+  }
+}
